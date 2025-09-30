@@ -6,15 +6,7 @@
 2) **(你自己的Steam根目录)**\steamapps\common\A Dance of Fire and Ice\Mods\Overlayer.Scripting\Scripts
 3) 在游戏内  **Overlayer.Scripting**  设置内点  **Reload** 
 
-例子 ->  **{iLevel(aa,bb)}** ## 我该怎么用呢？
-
-请确保已安装  **Overlayer V3**  与  **Overlayer.Scripting** 
-
-1) 将  **iTags.js**  拷贝到以下路径
-2) **(你自己的Steam根目录)**\steamapps\common\A Dance of Fire and Ice\Mods\Overlayer.Scripting\Scripts
-3) 在游戏内  **Overlayer.Scripting**  设置内点  **Reload** 
-
-例子 ->  **{iLevel(aa,bb)}** 
+例子 ->  **{iLevel(aa,bb)}**
 - 小括号内可以写个性化选项
 - 一个 tag 可能会有多个选项，用逗号分隔
 - 如果只想调 b 可以在 a 处输入空格表示默认
@@ -44,9 +36,9 @@ const maxCombo = 500    // 最大连击数
 ```
 
 ## Tag 总览
-
-精准度为满时会显示完美无瑕金色
-样式栏从 0 开始往上输入数字即可切换，有想要的可以反馈唷uwu
+- 精准度为满时会显示完美无瑕金色
+- 样式栏从 0 开始往上输入数字即可切换，有想要的可以反馈唷uwu
+- 颜色栏只可以输入色号 (也可以试试其他人的名字唷)
 
 ### 精准度
 iAcc(颜色)
