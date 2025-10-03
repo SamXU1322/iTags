@@ -10,7 +10,7 @@ use(
     "ColorRange", "MovingMan",
     "Combo", "MaxCombo", "MarginCombos",
     "MarginScale",
-    "iTiming"
+    "Timing"
 )
 
 
