@@ -567,23 +567,8 @@ function HSVToRGB(h, s, v) {
     const toHex = (n) => n.toString(16).padStart(2, '0');
     return `${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
-function* rgbGenerator() {
-    let hue = 0;
-    while (true) {
-        hue = (hue + 1) % 360;
-        const color = HSVToRGB(hue, 100, 100);
-        yield color
-    }
-}
-const rgbGen = rgbGenerator()
-function RGB() { 
-    const colorBegin = rgbGen.next().value;
-    const colorEnd = rgbGen.next().value;
-    return ColorRange("MilliSecond",0,1000,colorBegin,colorEnd);    
-}
-/*或者使用这样一个函数能减少变化量都试试
 function RGB() {
-    const piese = MilliSecond() / 20;
-    return ColorRange("MilliSecond",0,1000,HSVToRGB(60*piese,100,100),HSVToRGB(60*(piese+1),100,100));
+    const speed = 2;
+    const baseHue = ((MilliSecond() * 0.36)*speed)%360;
+    return ColorRange("MilliSecond",0,1000,HSVToRGB(baseHue,100,100),HSVToRGB((baseHue + 0.36 * speed) % 360,100,100));
 }
-*/
