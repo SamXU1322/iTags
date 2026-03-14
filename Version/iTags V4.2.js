@@ -44,6 +44,9 @@ const maxXAcc = 100     // 最大精准
 const minCombo = 0      // 最小连击数
 const maxCombo = 500    // 最大连击数
 
+/* RGB颜色变化速度 */
+const speed = 1
+
 
 
 
@@ -130,7 +133,25 @@ function colorType(hex) {
 function gradient(tag, min, max, hex, text) {
     return `<color=#${ColorRange(tag, min, max, "FFFFFF", colorType(hex))}>${text}</color>`
 }
-
+/**
+ * 小数点清理函数
+ * @params {number} num 需要清理的小数
+ * @params {number} precision 保留的小数位数，默认为3
+ * @params {number} epsilon 误差范围，默认为0.003
+ * @returns 如果num在整数范围内，则返回整数，否则返回保留precision位小数的字符串，并去除末尾的0
+ */
+function clearDecimal(num, precision = 3,epsilon = 0.003) {
+    const n = Number(num);
+    if (Number.isNaN(n)) {
+        return String(num);
+    }
+    const rounded = Math.round(n);
+    if (Math.abs(n - rounded) < epsilon) {
+        return String(rounded);
+    }
+    const fixed = n.toFixed(precision);
+    return fixed.replace(/\.?0+$/, '');
+}
 
 
 
@@ -153,6 +174,7 @@ function iAcc(hex) {
  */
 function iXAcc(hex) { 
     const XAcc = isNaN(XAccuracy()) ? 100 : XAccuracy(2)
+    if(XAcc == 100) hex = "FFD700"
     return gradient("XAccuracy", minXAcc, maxXAcc, hex, `${XAcc}%`)
 }
 
@@ -202,7 +224,7 @@ function iTBPM(hex) {
  * 提供根据当前BPM控制真实BPM文字的颜色变化，变化范围可以通过更改minBPM和maxBPM来改变的文本
  */
 function iCBPM(hex) {
-    return gradient("CurBpm", minBPM, maxBPM, hex, CurBpm(3))
+    return gradient("CurBpm", minBPM, maxBPM, hex, clearDecimal(CurBpm()))
 }
 /**
  * KPS函数
@@ -568,7 +590,6 @@ function HSVToRGB(h, s, v) {
     return `${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 function RGB() {
-    const speed = 2;
-    const baseHue = ((MilliSecond() * 0.36)*speed)%360;
-    return ColorRange("MilliSecond",0,1000,HSVToRGB(baseHue,100,100),HSVToRGB((baseHue + 0.36 * speed) % 360,100,100));
+    const baseHue = ((MilliSecond() * 0.36) * speed) % 360;
+    return ColorRange("MilliSecond", 0, 1000, HSVToRGB(baseHue, 100, 100), HSVToRGB((baseHue + 0.36 * speed) % 360, 100, 100));
 }
