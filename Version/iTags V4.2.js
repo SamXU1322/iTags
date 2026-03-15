@@ -223,8 +223,8 @@ function iTBPM(hex) {
  * @param {string} hex 颜色代码 
  * 提供根据当前BPM控制真实BPM文字的颜色变化，变化范围可以通过更改minBPM和maxBPM来改变的文本
  */
-function iCBPM(hex) {
-    return gradient("CurBpm", minBPM, maxBPM, hex, clearDecimal(CurBpm()))
+function iCBPM(hex,cleanDecimal = true) {
+    return gradient("CurBpm", minBPM, maxBPM, hex, cleanDecimal ? clearDecimal(CurBpm()) : CurBpm())
 }
 /**
  * KPS函数
