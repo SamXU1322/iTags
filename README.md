@@ -92,3 +92,9 @@ const maxCombo = 500    // 最大连击数
 ### iCombo(颜色,范围)
 - 真连击，空敲与紫外都算
 - 范围栏代表从 0 到指定连击数内变色
+
+## 贡献者
+
+- [SamXU1322](https://github.com/SamXU1322) - 项目创建者
+- [shadows2023](https://github.com/shadows2023) - 代码贡献
+- [StarR1ver](https://github.com/StarR1ver) - 代码贡献
