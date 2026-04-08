@@ -1,6 +1,6 @@
 ## 我该怎么用呢？
 
-请确保已安装  **Overlayer V3**  与  **Overlayer.Scripting** 
+请确保已安装  **Overlayer 3.48.0** 或以上
 
 1) 将  **iTags.js**  拷贝到以下路径
 2) **(你自己的Steam根目录)**\steamapps\common\A Dance of Fire and Ice\Mods\Overlayer.Scripting\Scripts
