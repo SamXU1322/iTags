@@ -4,7 +4,7 @@
 
 1) 将  **iTags.js**  拷贝到以下路径
 2) **(你自己的Steam根目录)**\steamapps\common\A Dance of Fire and Ice\Mods\Overlayer.Scripting\Scripts
-3) 在游戏内  **Overlayer.Scripting**  设置内点  **Reload** 
+3) 在游戏内  **Overlayer**  设置内点开 **Scripting** 点  **Reload**
 
 例子 ->  **{iLevel(aa,bb)}**
 - 小括号内可以写个性化选项
