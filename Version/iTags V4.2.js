@@ -412,9 +412,10 @@ function iScore(style) {
     }
 }
 /**
- * 获取 iScore
- * @param {string} style 样式
- * @returns {number} 
+ * 获取对于判断的tile个数
+ * @param {string} color 颜色代码
+ * @param {number} Judgement 判定范围
+ * @returns {string} 带颜色的文本，显示对应判定的Tile个数
  */
 function iJudge(color, Judgement) {
     const icon = `<color=#${color}>\u25CF</color>`
@@ -445,8 +446,8 @@ registerTag("iTile", function () {
 registerTag("iTBPM", function (hex) {
     return iTBPM(hex)
 })
-registerTag("iCBPM", function (hex) {
-    return iCBPM(hex)
+registerTag("iCBPM", function (hex,cleanDecimal) {
+    return iCBPM(hex,cleanDecimal)
 })
 registerTag("iKPS", function (hex) {
     return iKPS(hex)
@@ -587,6 +588,15 @@ function HSVToRGB(h, s, v) {
     const g = Math.round((gPrime + m) * 255);
     const b = Math.round((bPrime + m) * 255);
     const toHex = (n) => n.toString(16).padStart(2, '0');
+    return `${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+/**
+ * @returns 返回一个随机颜色的16进制字符串
+ */
+function RandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);  
+    const b = Math.floor(Math.random() * 256);
     return `${toHex(r)}${toHex(g)}${toHex(b)}`;
 }
 function RGB() {

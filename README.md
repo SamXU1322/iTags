@@ -58,8 +58,9 @@ const maxCombo = 500    // 最大连击数
 ### iTBPM(颜色)
 - 砖块BPM
 
-### iCBPM(颜色)
+### iCBPM(颜色,动态小数)
 - 实际BPM
+- 动态显示小数点，默认true启用
 
 ### iKPS(颜色)
 - 理论每秒点击
